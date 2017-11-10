@@ -6,11 +6,13 @@ import PropTypes from 'prop-types'
 import history from './history'
 import {Main, Login, Signup, UserHome} from './components'
 import {me} from './store'
+import NewIngredients from './components/NewIngredients.jsx'
+import Recipes from './components/Recipes.jsx'
 
 /**
  * COMPONENT
  */
-class Routes extends Component {
+export class Routes extends Component {
   componentDidMount () {
     this.props.loadInitialData()
   }
@@ -20,6 +22,7 @@ class Routes extends Component {
 
     return (
       <Router history={history}>
+      <div>
         <Main>
           <Switch>
             {/* Routes placed here are available to all visitors */}
@@ -36,6 +39,9 @@ class Routes extends Component {
             <Route component={Login} />
           </Switch>
         </Main>
+        <Route path="/newIngredients" component={NewIngredients} />
+        <Route path="/recipes" component={Recipes} />
+      </div>
       </Router>
     )
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../store'
+// import NewIngredients from './NewIngredients.jsx'
 
 /**
  * COMPONENT
@@ -15,7 +16,7 @@ const Main = (props) => {
 
   return (
     <div>
-      <h1>BOILERMAKER</h1>
+      <h1>STACKATHON</h1>
       <nav>
         {
           isLoggedIn
@@ -33,6 +34,10 @@ const Main = (props) => {
       </nav>
       <hr />
       {children}
+      <div>
+        <h2>Enter ingredients:</h2>
+        <Link to="/newIngredients">Add Ingredients</Link>
+      </div>
     </div>
   )
 }
