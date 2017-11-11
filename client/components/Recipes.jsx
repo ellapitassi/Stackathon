@@ -22,8 +22,12 @@ export class Recipes extends Component {
             <div>
                 <h3>Recipes</h3>
                 {
-                    this.props.recipeList.map(recipe => 
-                        <p key={recipe.recipe_id}>{recipe.title}</p>
+                    this.props.recipeList.map(recipe =>
+                        (
+                        <div key={recipe.recipe_id}>
+                        <a href={recipe.source_url} className="btn btn-info" role="button">{recipe.title}</a>
+                        </div>
+                        )
                     )
                 }
 

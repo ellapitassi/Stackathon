@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import user from './user'
 import ingredients from './ingredients'
 import recipes from './recipes'
-
+import clarifai from './clarifai'
 
 // store will = 
 //   {
@@ -16,9 +16,12 @@ import recipes from './recipes'
 //     recipes: {
 //       recipeList: []
 //     },
+    // clarifai: {
+    //   foodItemList: []
+    // }
 //   }
 //and user
-const reducer = combineReducers({user, ingredients, recipes})
+const reducer = combineReducers({user, ingredients, recipes, clarifai})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -29,3 +32,4 @@ export default store
 export * from './user'
 export * from './ingredients'
 export * from './recipes'
+export * from './clarifai'

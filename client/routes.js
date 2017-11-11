@@ -8,6 +8,8 @@ import {Main, Login, Signup, UserHome} from './components'
 import {me} from './store'
 import NewIngredients from './components/NewIngredients.jsx'
 import Recipes from './components/Recipes.jsx'
+import FoodItems from './components/FoodItems.jsx'
+import SendPic from './components/SendPic.jsx'
 
 /**
  * COMPONENT
@@ -41,6 +43,10 @@ export class Routes extends Component {
         </Main>
         <Route path="/newIngredients" component={NewIngredients} />
         <Route path="/recipes" component={Recipes} />
+        <Route path="/fridgepic" component={SendPic} />
+        <Route path="/fridgeitems" component={FoodItems} />
+
+
       </div>
       </Router>
     )

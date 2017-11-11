@@ -17,7 +17,6 @@ class NewIngredients extends Component {
     }
     
     handleChange(evt) {
-        //console.log('evt.target.value: ', evt.target.value)
         const ingredient = evt.target.value;
         this.setState({
             ingredient: ingredient,
