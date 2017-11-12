@@ -18,14 +18,15 @@ class NewIngredients extends Component {
     
     handleChange(evt) {
         const ingredient = evt.target.value;
+        console.log('CHANGE')
         this.setState({
             ingredient: ingredient,
         });
     }
 
     handleSubmit(evt) {
-        console.log("this.state: ", this.state)
-        console.log("this.props: ", this.props)
+        // console.log("this.state: ", this.state)
+        // console.log("this.props: ", this.props)
 
         evt.preventDefault();
 
@@ -57,24 +58,24 @@ class NewIngredients extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="form-group">
+                        <div className="add-food">
                             <div className="col-xs-10 col-xs-offset-2">
                                 <button
                                     type="submit"
                                     className="btn btn-success">
-                                    Submit
+                                    Add
                                 </button>
                             </div>
                         </div>
+                        <Link to="/recipes" >
+                            <button
+                                type="submit"
+                                className="btn btn-success">
+                                Search
+                            </button>
+                        </Link>
                     </fieldset>
                 </form>
-                <Link to="/recipes" >
-                    <button
-                        type="submit"
-                        className="btn btn-success">
-                        Search
-                    </button>
-                </Link>
             </div>
         );
     }

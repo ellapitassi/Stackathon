@@ -8,29 +8,30 @@ export class Recipes extends Component {
     }
 
     componentDidMount() {
-        console.log("THIS.PROPS: ", this.props)
-
+        //console.log("THIS.PROPS: ", this.props)
         this.props.getRecipesFunc(this.props.ingredients.ingredientList)
     }
 
     componentWillReceiveProps(nextProps){
-        console.log("NEXTPROPS: ", nextProps)
+       // console.log("NEXTPROPS: ", nextProps)
     }
 
     render() {
         return (
             <div>
-                <h3>Recipes</h3>
+                <h3 align="center">Recipes</h3>
+                <div className="recipePage">
                 {
                     this.props.recipeList.map(recipe =>
                         (
-                        <div key={recipe.recipe_id}>
+                        <div key={recipe.recipe_id} className="recipe">
+                        <img src={recipe.image_url} className="recipeImg" />
                         <a href={recipe.source_url} className="btn btn-info" role="button">{recipe.title}</a>
                         </div>
                         )
                     )
                 }
-
+                </div>
             </div>
         )
     }
@@ -46,8 +47,8 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getRecipesFunc: function (recipes) {//CHANGE THIS VARIABLE TO INGREDIENTS
-            dispatch(searchRecipesThunk(recipes))
+        getRecipesFunc: function (ingredients) {
+            dispatch(searchRecipesThunk(ingredients))
         }
     }
 };

@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: Lucida Sans Unicode;
   background-color: lavender;
 
   a {
@@ -20,3 +20,78 @@ body {
     display: inline-block;
   }
 }
+
+  .confFoods {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    color: green
+  }
+
+   .lessConfFoods {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    color: red
+  }
+
+     .foundFoods {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: center
+  }
+
+   .recipeImg {
+   // max-width: 100%;
+   height: 200px;
+   width: 200px;
+  }
+
+   .recipePage {
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+     .recipe {
+    text-align: center;
+    height: 250px;
+    width: 200px;
+    padding: 15px;
+    align-self: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .home {
+ 
+      background-image: url('http://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/home-technology/kitchen/buying-a-fridge-freezer-thinkstockphotos-483171477.jpg');
+      background-size:cover;
+      background-position: center;
+      background-repeat: repeat-y;
+
+    }
+
+    .Title {
+      background-color: lavender
+    }
+
+    .FridgeFoods {
+    display: flex;
+    text-align: center;
+    flex-flow: row wrap;
+    //align-self: center;
+    //justify-content: center;
+    //align-items: stretch;
+        // height: 250px;
+    // width: 200px;
+    // padding: 15px;
+    }

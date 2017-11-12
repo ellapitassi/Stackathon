@@ -10,26 +10,36 @@ class SendPic extends Component {
         this.state = {
             pic: ''
         }
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(evt) {
+        const pic = evt.target.value;
+        this.setState({
+            pic
+        });
     }
 
     handleSubmit(evt) {
         // console.log("EVT.TARGET: ", evt.target)
         evt.preventDefault();
         //const pic = evt.target.value;
-        // console.log("PIC: ", evt.target)
-        this.props.addPicThunk(evt.target.value)
+        const addPic = this.props.addPicThunk;
+        addPic(this.state.pic)
         this.setState({
-            pic: evt.target.value
+            pic: ''
         });
+
     }
 
     render() {
         const pic = this.state.pic;
-
+        const handleSubmit = this.handleSubmit;
+        const handleChange = this.handleChange;
         return (
             <div className="well" style={{ marginTop: '20px' }}>
-                <form className="form-horizontal" onSubmit={this.handleSubmit}>
+                <form className="form-horizontal" onSubmit={handleSubmit}>
                     <fieldset>
                         <legend>Upload Picture</legend>
                         <div className="form-group">
@@ -38,15 +48,17 @@ class SendPic extends Component {
                                 <input
                                     className="form-control"
                                     type="text"
+                                    onChange={handleChange}
+                                    value={pic}
                                 />
                             </div>
                         </div>
+                        <button
+                            type="submit"
+                            className="btn btn-success">
+                            Search
+                        </button>
                     </fieldset>
-                    <button
-                        type="submit"
-                        className="btn btn-success">
-                        Search
-                    </button>
                 </form>
             </div>
         );
