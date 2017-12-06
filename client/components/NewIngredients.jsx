@@ -17,6 +17,9 @@ class NewIngredients extends Component {
     }
     
     handleChange(evt) {
+
+        evt.preventDefault();
+
         const ingredient = evt.target.value;
         console.log('CHANGE')
         this.setState({
@@ -25,9 +28,6 @@ class NewIngredients extends Component {
     }
 
     handleSubmit(evt) {
-        // console.log("this.state: ", this.state)
-        // console.log("this.props: ", this.props)
-
         evt.preventDefault();
 
         const addIngredient = this.props.addIngredientFunc;
@@ -88,6 +88,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchtoProps = (dispatch) => {
+    console.log("newIngredients")
     return {
         addIngredientFunc: function (ingredient) {
             dispatch(addIngredientThunk(ingredient))

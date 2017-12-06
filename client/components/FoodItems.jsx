@@ -17,36 +17,21 @@ export class Foods extends Component {
     handleChange(evt) {
         evt.preventDefault();
 
-        console.log("HANDLE CHANGE")
+        console.log("HANDLE CHANGE", this.state)
         const foodItem = evt.target.value
-        //var addFalseToState = { foodItem, toggle: false }
         var addTrueToState = { foodItem, toggle: true }
 
 
-        console.log("FOODITEM: ", foodItem)
-       // if (!this.state.ingredientFromFridge.foodItem) {// || !this.state.ingredientFromFridge.foodItem.toggle){ //if its already there then we want to switch toggle
-            
+        console.log("FOODITEM: ", foodItem)           
         this.setState({
             ingredientFromFridge: this.state.ingredientFromFridge.concat(addTrueToState)
-        }) 
-        //} else {
-        //     this.setState({
-        //         ingredientFromFridge: this.state.ingredientFromFridge.concat(addFalseToState)
-        //     })
-        // }
+        })
         console.log("this.state: ", this.state)
     }
 
     handleSubmit(evt) {
-        console.log("HANDLE SUBMIT")
-
-        console.log("this.state: ", this.state)
-        console.log("this.props: ", this.props)
-
-        //evt.preventDefault();
 
         const addFoods = this.props.getFoodsFunc;
-        //console.log("HERE HERE HEREingredientFromFridge:", this.state.ingredientFromFridge)
         var foodArr = [];
         (this.state.ingredientFromFridge).forEach(food =>
             foodArr.push(food.foodItem)
@@ -57,8 +42,11 @@ export class Foods extends Component {
         });
 
     }
+    
 
     render() {
+        console.log("FOODITEMS")
+
         const ingredientFromFridge = this.state.ingredientFromFridge;
         const handleSubmit = this.handleSubmit;
         const handleChange = this.handleChange;
@@ -68,7 +56,7 @@ export class Foods extends Component {
         var confFoods = [];
         var lessConfFoods = [];
         for (var i = 0; i < foodArr.length; i++){
-            (foodArr[i].value >= 0.95) ?
+            (foodArr[i].value >= 0.80) ?
             confFoods.push(foodArr[i])
             : lessConfFoods.push(foodArr[i])
         }
@@ -79,7 +67,7 @@ export class Foods extends Component {
                 <form className="form-horizontal">
                 <h3>Foods detected in your fridge:</h3>
                 <div className="FridgeFoods">
-               {    
+               {
                     confFoods.map(food =>
                        (
                            <div className="confFoods" key={food.id}>

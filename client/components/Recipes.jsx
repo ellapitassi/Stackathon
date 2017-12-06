@@ -8,20 +8,17 @@ export class Recipes extends Component {
     }
 
     componentDidMount() {
-        //console.log("THIS.PROPS: ", this.props)
         this.props.getRecipesFunc(this.props.ingredients.ingredientList)
     }
 
-    componentWillReceiveProps(nextProps){
-       // console.log("NEXTPROPS: ", nextProps)
-    }
 
     render() {
         return (
             <div>
-                <h3 align="center">Recipes</h3>
+                <h3 align="center" background="lavender">Recipes</h3>
                 <div className="recipePage">
                 {
+                   this.props.recipeList.length ?
                     this.props.recipeList.map(recipe =>
                         (
                         <div key={recipe.recipe_id} className="recipe">
@@ -30,6 +27,8 @@ export class Recipes extends Component {
                         </div>
                         )
                     )
+                    : <h3>Searching for recipes...</h3>
+
                 }
                 </div>
             </div>
@@ -39,6 +38,7 @@ export class Recipes extends Component {
 
 
 function mapStateToProps(state) {
+    console.log("SATE..recipesRECIPElIST: ", state.recipes.recipeList)
     return {
         recipeList: state.recipes.recipeList,
         ingredients: state.ingredients

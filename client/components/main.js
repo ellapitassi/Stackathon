@@ -34,11 +34,11 @@ const Main = (props) => {
       </nav>
       <hr />
       {children}
-      <div>
-        <h2>Upload a Picture of the items in your fridge</h2>
+      <div align="center">
+        <h2 >Upload a Picture of the items in your fridge</h2>
         <Link to="/fridgepic">Upload picture</Link>
       </div>
-      <div>
+      <div align="center">
         <h2>Enter ingredients:</h2>
         <Link to="/newIngredients">Add Ingredients</Link>
       </div>

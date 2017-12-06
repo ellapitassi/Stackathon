@@ -1,6 +1,19 @@
 body {
+  background-image: url('http://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/home-technology/kitchen/buying-a-fridge-freezer-thinkstockphotos-483171477.jpg');
   font-family: Lucida Sans Unicode;
   background-color: lavender;
+  background-color: rgba(5,4,2,0.1);
+  width: 100%;
+
+
+// div{
+// background-color: rgba(5,4,2,0.1);
+// width:850px;
+// height: 100%;
+// margin-left:auto;
+// margin-right:auto;
+// // padding: 15px; 
+// }
 
   a {
     text-decoration: none;
@@ -41,8 +54,13 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 60%;
-    justify-content: center
+    // width: 100%;
+    padding-right: 140px;
+    padding-left: 140px;
+
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 20px;
   }
 
    .recipeImg {
@@ -58,31 +76,36 @@ body {
     align-self: center;
     justify-content: center;
     align-content: center;
+    background-color: lavender;
   }
 
      .recipe {
     text-align: center;
     height: 250px;
-    width: 200px;
+    width: 220px;
     padding: 15px;
     align-self: center;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
   }
-
+.recipeTitle{
+  background-color: lavender;
+}
   .home {
- 
-      background-image: url('http://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/home-technology/kitchen/buying-a-fridge-freezer-thinkstockphotos-483171477.jpg');
       background-size:cover;
+      color: white;
       background-position: center;
       background-repeat: repeat-y;
+      // text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 
     }
 
-    .Title {
-      background-color: lavender
-    }
+    // .Title {
+    //   background-color: lavender
+    // }
 
     .FridgeFoods {
     display: flex;
@@ -92,6 +115,6 @@ body {
     //justify-content: center;
     //align-items: stretch;
         // height: 250px;
-    // width: 200px;
+    width: 100%;
     // padding: 15px;
     }

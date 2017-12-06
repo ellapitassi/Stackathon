@@ -22,9 +22,7 @@ class SendPic extends Component {
     }
 
     handleSubmit(evt) {
-        // console.log("EVT.TARGET: ", evt.target)
         evt.preventDefault();
-        //const pic = evt.target.value;
         const addPic = this.props.addPicThunk;
         addPic(this.state.pic)
         this.setState({

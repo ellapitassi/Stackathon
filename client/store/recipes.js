@@ -13,6 +13,8 @@ export const GET_RECIPES = "GET_RECIPES";
 
 //ACTION CREATORS
 function getRecipes(recipeList) {
+    console.log("HERE")
+
     return {
         type: GET_RECIPES,
         recipeList
@@ -26,10 +28,10 @@ export function searchRecipesThunk(foods) { //['carrots', 'fish']
         console.log("FOODS: ", foods)
         const foodItems = foods.join(",")
         console.log("FOOD ITEMS: ",foodItems)
-        return axios.get(`http://food2fork.com/api/search?key=667b96492c4f7ed199468b1eb8b4e16f
-&q=${foodItems}`)
+        return axios.get('https://cors-anywhere.herokuapp.com/' + `http://food2fork.com/api/search?key=667b96492c4f7ed199468b1eb8b4e16f
+&q=${foodItems}`) //return doesnt make a difference?
             .then(res => {
-                //console.log("RES.DATA: ",res.data)
+                console.log("RES.DATA: ",res.data)
                 return dispatch(getRecipes(res.data.recipes))
             })
     }
